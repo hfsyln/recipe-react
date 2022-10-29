@@ -1,8 +1,11 @@
 import './App.css';
 import Login from "./pages/login/Login";
 import NavBar from "./components/navbar/NavBar" ;
+
 import Home from "./pages/home/Home"
 import { BrowserRouter, Routes, Route  } from 'react-router-dom';
+import About from './pages/about/About';
+import RecipeCard from './pages/home/RecipeCard';
 
 
 
@@ -21,7 +24,8 @@ function App() {
     </Routes>
     </BrowserRouter>
       
-      <Login/>
+      
+    <Home/>
 
     </div>
   )

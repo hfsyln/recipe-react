@@ -34,10 +34,25 @@ body {
   
 }
 .HomeDiv {
-  height: 100vh;
+  
   background-color: rgb(239, 235, 230);
 }
 .homeh2{
   text-align: center;
   margin: 2rem;
+}
+
+.aboutDiv{
+  background-color: bisque;
+  height: 100vh;
+}
+
+.imgDiv {
+  background-color: rgb(133, 151, 151) !important;
+  
+}
+
+.CardBtn {
+  background-color: rgb(158, 131, 92) !important;
+  border: none !important;
 }
