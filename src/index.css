@@ -19,9 +19,13 @@ body {
 
 .NavBarUl {
   display: flex;
-  flex-direction: row;
   gap: 3rem;
   list-style: none;
+  
+}
+.linkNav {
+  display: flex;
+  justify-content: space-between;
 }
 
 .NavBg {
@@ -34,7 +38,6 @@ body {
   
 }
 .HomeDiv {
-  
   background-color: rgb(239, 235, 230);
 }
 .homeh2{
@@ -56,3 +59,4 @@ body {
   background-color: rgb(158, 131, 92) !important;
   border: none !important;
 }
+
