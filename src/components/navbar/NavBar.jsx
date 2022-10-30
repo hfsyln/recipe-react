@@ -2,18 +2,24 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { NavLink, useNavigate} from 'react-router-dom'
 
 const NavBar = () => {
+  
+  
   return (
     <div className='NavDiv'>
          <Navbar  className='NavBg' variant="dark">
             <Container className=''>
-                <Navbar.Brand href="#home"> /ED&EN/RECİPE </Navbar.Brand>
-                <Nav>
+                <Nav className='linkNav' >
+                    <NavLink to="/home" >ED&EN/RECİPE</NavLink>
+                    
                     <ul className='NavBarUl'>
-                        <li><Nav.Link >ABOUT</Nav.Link></li> 
-                        <li><Nav.Link >GITHUP</Nav.Link></li> 
-                        <li><Nav.Link >LOGOUT</Nav.Link></li> 
+                      
+                        <li><NavLink to="/about" >ABOUT</NavLink></li> 
+                        <li><a href="https://github.com/hfsyln">GITHUB</a></li> 
+                        <li><NavLink to="/login" >LOG OUT</NavLink></li> 
+                        
                     </ul>
                 </Nav>
             </Container>
@@ -22,4 +28,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavBar;

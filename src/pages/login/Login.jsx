@@ -3,15 +3,18 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import  Meal2 from "../../assets/meal2.svg"
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
+
+
 
 const Login = () => {
  
+     // const navigate = useNavigate();
 
-
- const handleClick = () => {
-    
- }
+      const handleClick = () => {
+         //navigate("/home")
+         window.location.href = "/home";
+      }
  
  
  

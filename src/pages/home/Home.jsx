@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import NavBar from '../../components/navbar/NavBar'
 import { useState } from 'react';
 import RecipeCard from "./RecipeCard";
@@ -16,7 +15,7 @@ const [recipes, setRecipes] = useState();
 const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
 const [query, setQuery]= useState(``);
 const [meal, setMeal]= useState(mealTypes[0].toLowerCase());
-const  [load, setLoad]=useState(false)
+
 const APP_ID = "e0550b67"
 const APP_KEY= "b9fce4db63d154f4247d4d944c3fba8f"
 const url =`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`;
@@ -41,7 +40,9 @@ const getApı = async()=> {
     <div className='HomeDiv'>
 
         <NavBar/>
+
         <h2 className='homeh2'>Food App</h2>
+        
         <Card className='d-flex flex-row gap-3 mx-auto my-3' style={{ width: '30rem' }}>
                 <Form.Control  onChange={(e)=> {
                 console.log(e.target.value)
@@ -58,7 +59,7 @@ const getApı = async()=> {
           </Form.Select>
         </Card>
     
-         <div className="d-flex flex-wrap gap-4 m-4 justify-content-center" style={{height:"250vh"}}>
+         <div className="d-flex flex-wrap gap-4 m-4 justify-content-center" >
         
            {recipes ? (
             
