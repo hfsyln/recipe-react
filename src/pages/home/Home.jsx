@@ -9,6 +9,7 @@ import homeSvg from '../../assets/home.svg'
 
 
 
+
 const Home = () => {
 
 const [recipes, setRecipes] = useState();
@@ -77,6 +78,7 @@ const getApı = async()=> {
               
               } 
         </div>
+      
 
     </div>
   );
