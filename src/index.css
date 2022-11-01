@@ -21,11 +21,18 @@ body {
   display: flex;
   gap: 3rem;
   list-style: none;
+
   
 }
 .linkNav {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 40vw;
+}
+
+.linkNav a {
+  color: black;
+  font-size: 1.3rem;
 }
 
 .NavBg {
@@ -60,3 +67,6 @@ body {
   border: none !important;
 }
 
+.detDiv {
+  background-color: rgb(235, 212, 180) !important;
+}

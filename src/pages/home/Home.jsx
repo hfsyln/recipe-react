@@ -15,7 +15,8 @@ const Home = () => {
     const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
     const [query, setQuery]= useState(``);
     const [meal, setMeal]= useState(mealTypes[0].toLowerCase());
-    const [hata, setHata]=useState(false)
+   
+   
 
 
     const APP_ID = "e0550b67"
@@ -30,7 +31,6 @@ const getApı = async()=> {
   
     console.log(data)
     console.log(data.hits)
-    console.log(data.hits[0])
     setRecipes(data?.hits)
     console.log(recipes)
  
@@ -80,7 +80,7 @@ const getApı = async()=> {
               : 
               <div className='imgDiv rounded-circle mx-auto my-5' style={{width:"50vw", height:"60vh"}}>
                   <img className='m-5' src={homeSvg} style={{width:"30vw", height:"50vh"}} alt=""></img>
-                  <p>Henüz giriş yapılmadı yada eşleşme bulunamadı</p>
+                  
               </div>
 
               

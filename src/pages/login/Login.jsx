@@ -17,18 +17,8 @@ const Login = () => {
   console.log(pass)
       const navigate = useNavigate();
 
-
-
-       useEffect((e) => {
-        
-         const items = JSON.parse(localStorage.getItem("item")) || []
-         setUser(items)
-       }, [])
-
       const handleClick = () => {
         if(name && pass){
-
-          navigate("/home")
 
           const person = {
             id: Math.floor(Math.random()*1000),
@@ -39,14 +29,32 @@ const Login = () => {
           console.log(user)
           localStorage.setItem("item", JSON.stringify(user));
           setUser(user)
-        }else {
-          alert("Eksik giriş yaptınız")
+          setName("")
+          setPass("")
+          alert("kaydınız oluşturulmuştur")
         }
-        
-         
       }
+
+     const checkClick = () => {
+      if(name && pass){
+        const check = user.filter((item) => item.name === name && item.pass === pass);
+            console.log(check);
+          if(check.length > 0){
+              navigate("/home")
+          }
+          else{
+            alert("Kayıt bulunamadı kayıt olunuz")
+            setName("")
+            setPass("")
+          }
+        }else{alert("L,tfen geçerlli bi giriş yapınız")}
+        }
  
- 
+     useEffect((e) => {
+        
+      const items = JSON.parse(localStorage.getItem("item")) || []
+      setUser(items)
+    }, [])
  
   return (
   <div className='loginDiv'>
@@ -59,6 +67,7 @@ const Login = () => {
           placeholder="Username"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
+          value={name}
           onChange={(e)=>{setName(e.target.value)}}
         />
 
@@ -67,10 +76,12 @@ const Login = () => {
           placeholder="Pasword"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
+          value={pass}
           onChange={(e)=>{setPass(e.target.value)}}
         />
       
-      <Button className='mt-3' variant="secondary" onClick={handleClick}>LOGİN</Button> 
+      <Button className='m-3' variant="secondary" onClick={checkClick}>LOG İN</Button> 
+      <Button className='m-3' variant="secondary" onClick={handleClick}>SİNG İN</Button> 
     </Card.Body>
   </Card>
   </div>
