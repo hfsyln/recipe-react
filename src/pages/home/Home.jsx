@@ -9,33 +9,38 @@ import homeSvg from '../../assets/home.svg'
 
 
 
-
 const Home = () => {
 
-const [recipes, setRecipes] = useState();
-const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
-const [query, setQuery]= useState(``);
-const [meal, setMeal]= useState(mealTypes[0].toLowerCase());
+    const [recipes, setRecipes] = useState();
+    const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
+    const [query, setQuery]= useState(``);
+    const [meal, setMeal]= useState(mealTypes[0].toLowerCase());
+    const [hata, setHata]=useState(false)
 
-const APP_ID = "e0550b67"
-const APP_KEY= "b9fce4db63d154f4247d4d944c3fba8f"
-const url =`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`;
+
+    const APP_ID = "e0550b67"
+    const APP_KEY= "b9fce4db63d154f4247d4d944c3fba8f"
+    const url =`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`;
 
 
 const getApı = async()=> {
 
   if(query) {
   const {data} = await axios.get(url) ;
-  console.log(data)
-  console.log(data.hits)
-  console.log(data.hits[0])
-  setRecipes(data?.hits)
-  console.log(recipes)
-
-} else{
-  console.log("please fill the form");
-}
+  
+    console.log(data)
+    console.log(data.hits)
+    console.log(data.hits[0])
+    setRecipes(data?.hits)
+    console.log(recipes)
+ 
+  } else{
+    console.log("please fill the form");
+  }
 };
+
+
+
 
   return (
     <div className='HomeDiv'>
@@ -60,25 +65,31 @@ const getApı = async()=> {
           </Form.Select>
         </Card>
     
+
+    
          <div className="d-flex flex-wrap gap-4 m-4 justify-content-center" >
         
            {recipes ? (
             
               recipes.map((recipe, index)=> (
-                   <RecipeCard key={index} recipe= {recipe}/>
-                ))
-               
-              
+                  
+                <RecipeCard key={index} recipe= {recipe}/>
+                
+                ))   
            )
               : 
               <div className='imgDiv rounded-circle mx-auto my-5' style={{width:"50vw", height:"60vh"}}>
-              <img className='m-5' src={homeSvg} style={{width:"30vw", height:"50vh"}} alt=""></img>
+                  <img className='m-5' src={homeSvg} style={{width:"30vw", height:"50vh"}} alt=""></img>
+                  <p>Henüz giriş yapılmadı yada eşleşme bulunamadı</p>
               </div>
 
               
               } 
+            
         </div>
-      
+        <div>
+          
+        </div>
 
     </div>
   );

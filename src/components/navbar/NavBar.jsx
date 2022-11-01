@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink, useNavigate} from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 const NavBar = () => {
   
@@ -12,7 +12,7 @@ const NavBar = () => {
          <Navbar  className='NavBg' variant="dark">
             <Container className=''>
                 <Nav className='linkNav' >
-                    <NavLink to="/home" >ED&EN/RECİPE</NavLink>
+                    <NavLink to="/login" >ED&EN/RECİPE</NavLink>
                     
                     <ul className='NavBarUl'>
                       

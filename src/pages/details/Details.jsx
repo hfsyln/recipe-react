@@ -9,15 +9,13 @@ const Details = () => {
   console.log(state)
   return (
     <div>
-
+      
     <NavBar/>
 
-    <img src=""  className="w-40" />
-    <p>Calorie:{}</p>
-    <div>          </div>
-    <img src="{}" alt="" />
 
+    <p>nvbfgdkjÇHSKJdZVMNCBÇKGRSDJZFNBXköhGJngbN</p>
     </div>
+
   )
 }
 
